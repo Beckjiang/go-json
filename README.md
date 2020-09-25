@@ -72,7 +72,7 @@ object.SetObjectKV([]byte("new_key"), NewInt(123))
 //encode
 result := object.Encode(nil)
 //用完释放，对象复用
-object.DecRef()
+val.DecRef()
 ```
 
 # 如何获取
