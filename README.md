@@ -13,8 +13,8 @@ Raw Result
 | --------------- | ----------- | ---------------- | ---------------- |
 |go-json decode with schema         |         15796 ns/op      |      2529 B/op     |    25 allocs/op|
 |std decode                          |        18924 ns/op        |    6597 B/op   |     110 allocs/op|
-|go-json decode                       |       26578 ns/op        |    2800 B/op         67 allocs/op|
-|jsoniter decode                      |       36709 ns/op        |    15349 B/op        323 allocs/op|
+|go-json decode                       |       26578 ns/op        |    2800 B/op    |     67 allocs/op|
+|jsoniter decode                      |       36709 ns/op        |    15349 B/op    |    323 allocs/op|
 
 |                 | ns/op       | allocation bytes | allocation times |
 | --------------- | ----------- | ---------------- | ---------------- |
