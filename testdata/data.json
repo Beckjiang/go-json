@@ -1,0 +1,95 @@
+{
+  "plugins": {
+    "kugou.route-mapping": {
+      "uri": "/v1/app_song_list_offset"
+    },
+    "kugou.response-mapping": {
+      "data_wrap": "song_data_list",
+      "data_model": "song",
+      "data_with_offset": "data.1.offset",
+      "data_type": "array",
+      "field_map": {
+        "album_name": "album_name",
+        "audio_name": "name",
+        "album_id": "album_id",
+        "album_audio_id": "album_audio_id"
+      },
+      "assembly": {
+        "song": {
+          "flatten": true,
+          "mode": "multi",
+          "assembler": "multi_song_list_data",
+          "key": "album_audio_id",
+          "field_map": {
+            "album_name": "album_name",
+            "composer": "composer",
+            "album_sizable_cover": "album_sizable_cover",
+            "is_vip_song": "is_vip_song",
+            "playable_code": "playable_code",
+            "lyricist": "lyricist",
+            "authors": "authors"
+          }
+        }
+      },
+      "list_field": "data.1.songs"
+    },
+    "kugou.field-mapping": {
+      "fields": {
+        "offset": {
+          "default": -1,
+          "position": "body"
+        },
+        "pagesize": {
+          "default": 1,
+          "position": "body"
+        },
+        "radio_id": {
+          "default": 0,
+          "position": "body"
+        },
+        "fmtype": {
+          "default": 2,
+          "position": "body"
+        }
+      },
+      "field_map": {
+        "offset": {
+          "process": "wrap",
+          "name": "offset",
+          "wrap_field": "data",
+          "wrap_type": "array"
+        },
+        "pagesize": {
+          "process": "wrap",
+          "name": "size",
+          "wrap_field": "data",
+          "wrap_type": "array"
+        },
+        "radio_id": {
+          "process": "wrap",
+          "name": "fmid",
+          "wrap_field": "data",
+          "wrap_type": "array"
+        },
+        "fmtype": {
+          "process": "wrap",
+          "name": "fmtype",
+          "wrap_field": "data",
+          "wrap_type": "array"
+        }
+      }
+    }
+  },
+  "uri": "/v1/get_fm_songlist",
+  "service_id": "00000000000000000131",
+  "desc": "电台接口-电台歌曲",
+  "methods": [
+    "POST",
+    {
+      "process": "wrap",
+      "name": "fmtype",
+      "wrap_field": "data",
+      "wrap_type": "array"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "status": 1,
+  "error_code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "copyright": {
+        "audio_pay_type": 0,
+        "album_pay_type": 0,
+        "audio_price": 0,
+        "album_price": 0,
+        "album_sale_url": "",
+        "required_identity": 0,
+        "encrypt_file": 0,
+        "viponly_tag": 0,
+        "all_quality_free": 0,
+        "cid": 0,
+        "cpy_grade": 0,
+        "cpy_level": 0,
+        "qualities": {
+          "128": {
+            "privilege": 0,
+            "sale_mode": {
+              "play": 0,
+              "download": 0
+            },
+            "status": {
+              "play": 1,
+              "download": 1
+            }
+          },
+          "320": {
+            "privilege": 0,
+            "sale_mode": {
+              "play": 0,
+              "download": 0
+            },
+            "status": {
+              "play": 1,
+              "download": 1
+            }
+          },
+          "flac": {
+            "privilege": 0,
+            "sale_mode": {
+              "play": 0,
+              "download": 0
+            },
+            "status": {
+              "play": 1,
+              "download": 1
+            }
+          }
+        }
+      },
+      "base": {
+        "audio_id": 3454590,
+        "is_publish": 1,
+        "album_audio_id": 198280578,
+        "album_id": 0
+      }
+    }
+  ]
+}
