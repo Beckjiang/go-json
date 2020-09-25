@@ -13,12 +13,12 @@ Raw Result
 | --------------- | ----------- | ---------------- | ---------------- |
 |go-json decode with schema         |         15796 ns/op      |      2529 B/op     |    25 allocs/op|
 |std decode                          |        18924 ns/op        |    6597 B/op   |     110 allocs/op|
-|go-json decode                       |       26578 ns/op            2800 B/op         67 allocs/op|
-|jsoniter decode                      |       36709 ns/op            15349 B/op        323 allocs/op|
+|go-json decode                       |       26578 ns/op        |    2800 B/op         67 allocs/op|
+|jsoniter decode                      |       36709 ns/op        |    15349 B/op        323 allocs/op|
 
 |                 | ns/op       | allocation bytes | allocation times |
 | --------------- | ----------- | ---------------- | ---------------- |
-|go-json encode (decode with schema)   |        803 ns/op       |     1328 B/op     |     3 allocs/op|
+|go-json encode (after decode with schema)   |        803 ns/op       |     1328 B/op     |     3 allocs/op|
 |go-json encode                       |       3693 ns/op        |     1464 B/op     |     4 allocs/op|
 |std encode                           |        21914 ns/op      |      8482 B/op    |    179 allocs/op|
 |jsoniter encode                     |         21997 ns/op      |      8482 B/op     |   179 allocs/op|
@@ -77,4 +77,6 @@ object.DecRef()
 
 # 如何获取
 
+```bash
 go get github.com/beckjiang/go-json
+```
